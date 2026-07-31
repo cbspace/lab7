@@ -1,6 +1,7 @@
 'use strict';
+/** @type {import('sequelize-cli').Migration} */
 module.exports = {
-  up: async (queryInterface, Sequelize) => {
+  async up(queryInterface, Sequelize) {
     await queryInterface.createTable('Users', {
       id: {
         allowNull: false,
@@ -12,7 +13,7 @@ module.exports = {
         type: Sequelize.STRING
       },
       lineStatus: {
-        type: Sequelize.ENUM
+        type: Sequelize.ENUM('online','offline')
       },
       createdAt: {
         allowNull: false,
@@ -24,7 +25,7 @@ module.exports = {
       }
     });
   },
-  down: async (queryInterface, Sequelize) => {
+  async down(queryInterface, Sequelize) {
     await queryInterface.dropTable('Users');
   }
 };
