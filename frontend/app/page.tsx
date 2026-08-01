@@ -1,7 +1,7 @@
 'use client'
   import { useEffect, useState } from 'react';
   
-  const APIURL = "http://localhost:4080";
+  const APIURL = "http://10.0.0.100:4080";
   
   export interface User {
     id: number;

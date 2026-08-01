@@ -1,5 +1,5 @@
 
-FROM node:lts
+FROM node:current
    
    # Needed to compile native modules like sqlite3
    RUN apt-get update && apt-get install -y python3 make g++
